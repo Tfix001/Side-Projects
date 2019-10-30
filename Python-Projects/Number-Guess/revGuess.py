@@ -1,6 +1,6 @@
 print("Pick a range of numbers X - Y")
-lowNum = (int(input("Low Number:")))
-highNum = (int(input("High Number:")))
+lowNum = (int(input("Low Number: ")))
+highNum = (int(input("High Number: ")))
 mid = (lowNum + highNum) / 2
 low1 = lowNum
 high1 = highNum
