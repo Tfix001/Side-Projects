@@ -1,30 +1,34 @@
 print("Pick a range of numbers X - Y")
-lowNum = (int(input("Low Number: ")))
-highNum = (int(input("High Number: ")))
+lowNum = (int(input("Low Number:")))
+highNum = (int(input("High Number:")))
 mid = (lowNum + highNum) / 2
+low1 = lowNum
+high1 = highNum
 userInput = "No"
-while userInput is not "Yes"
-    print("Is ", mid, " the number?")
+while "Yes" not in userInput:
+    print("Is", mid, "the number?")
     userInput = input()
-    if userInput is not "Yes"
-        userInput = input("Higher or Lower?")
-        if userInput is "Higher"
-            mid = (mid + highNum) / 2
-            if mid is highNum
-                print("Is ", highNum, " the number?")
+    if "Yes" not in userInput:
+        userInput = input("Higher or Lower? ")
+        if "Higher" in userInput:
+            low1 = mid
+            mid = (mid + high1) / 2
+            if mid is highNum:
+                print("Is", highNum, "the number?")
                 userInput = input()
-                    if userInput is not "Yes"
-                        print("Number is not in range")
-                        break
-        else
-            mid = (lowNum + mid) / 2
-            if mid is lowNum
-                print("Is ", lowNum, " the number?")
+                if "No" in userInput:
+                    print("Number is not in the range", lowNum, "-", highNum)
+                    break
+        elif "Lower" in userInput:
+            high1 = mid
+            mid = (low1 + mid) / 2
+            if mid is lowNum:
+                print("Is", highNum, "the number?")
                 userInput = input()
-                    if userInput is not "Yes"
-                        print("Number is not in range")
-                        break
-if userInput is "Yes"
-    print("Got the number! It was ", mid)
-else
+                if "No" in userInput:
+                    print("Number is not in the range", lowNum, "-", highNum)
+                    break
+if "Yes" in userInput:
+    print("Got the number! It was", mid)
+else:
     print("Sorry, I couldn't guess it")
