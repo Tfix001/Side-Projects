@@ -1,6 +1,8 @@
 import random
-randNum = random.randint(1, 100)
-print("Guess a number between 1 & 100")
+lowNum = (int(input("Input a low range number: ")))
+highNum = (int(input("Input a high range number: ")))
+randNum = random.randint(lowNum, highNum)
+print("Guess a number between", int(lowNum), '&', int(highNum))
 userNum = (int(input()))
 while userNum is not randNum:
     if userNum < randNum:
